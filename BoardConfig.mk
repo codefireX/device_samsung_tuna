@@ -30,8 +30,8 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := cortex-a9
 ARCH_ARM_HAVE_TLS_REGISTER := true
-ARCH_ARMV7A_NON_QCOM := true
 
 TARGET_NO_BOOTLOADER := true
 
@@ -101,3 +101,9 @@ BOARD_USES_SECURE_SERVICES := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/tuna/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+BOARD_SEPOLICY_DIRS := \
+        device/samsung/tuna/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+        genfs_contexts \
+        file_contexts
